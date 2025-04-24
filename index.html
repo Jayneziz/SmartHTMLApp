@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- CSS located in /css/style.css -->
+  <!-- JavaScript located in /js/script.js and /js/worker.js -->
+  <!-- SSE endpoint located in /php/sse.php -->
+  <!-- Assets (images) located in /assets/ -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartHTMLApp/</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>SmartHTMLApp</h1>
+    <span class="material-icons"><button id="theme-toggle">Toggle Theme
+     </button></span>
+
+    <div id="clock"></div>
+  </header>
+  <main>
+    <section>
+      <h2>🌍 Your Location</h2>
+      <p id="location">Fetching location...</p>
+    </section>
+    <section>
+      <h2>🖱️ Drag & Drop back and forth</h2>
+      <div id="drag-area">
+       
+
+        <div id="drop-zone1" ondrop="dropHandler(event)"   ondragover="dragoverHandler(event)">
+        <img id="img1" src="assets/image1.jpg" draggable="true" ondragstart="dragstartHandler(event)" width="368" height="200">
+      </div>
+
+      <p><div id="drop-zone2" ondrop="dropHandler(event)"   ondragover="dragoverHandler(event)"></div></p>
+
+      </div>
+    </section>
+    <section>
+      <h2>💾 Save Your Preferences</h2>
+      <input type="text" id="username" placeholder="Enter your name">
+      <button onclick="saveData()">Save</button>
+      <p id="stored-name"></p>
+    </section>
+    <section>
+      <h2>🧠 Background Count</h2>
+
+        <p>[    <output id="result"></output>    ]</p>
+        <button onclick="startWorker()">Start Worker</button> 
+        <button onclick="stopWorker()">Stop Worker</button>
+        <button onclick="resetWorker()">Reset</button>
+
+    </section>
+    <section>
+      <h2>📡 Live Updates</h2>
+      <div id="sse-output">Waiting for messages...</div>
+    </section>
+  </main>
+  <script src="js/script.js"></script>
+  <script src="js/workers.js"></script>
+</body>
+</html>
