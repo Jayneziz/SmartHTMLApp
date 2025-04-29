@@ -84,3 +84,8 @@ if (localStorage.getItem("theme") === "dark") {
 setInterval(() => {
   document.getElementById("clock").textContent = new Date().toLocaleTimeString();
 }, 1000);
+// Audio Mute Toggle
+function toggleMute() {
+  const audio = document.getElementById("bgMusic");
+  audio.muted = !audio.muted;
+}

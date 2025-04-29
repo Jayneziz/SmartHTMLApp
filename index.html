@@ -28,14 +28,10 @@
     <section>
       <h2>🖱️ Drag & Drop back and forth</h2>
       <div id="drag-area">
-       
-
-        <div id="drop-zone1" ondrop="dropHandler(event)"   ondragover="dragoverHandler(event)">
-        <img id="img1" src="assets/image1.jpg" draggable="true" ondragstart="dragstartHandler(event)" width="368" height="200">
-      </div>
-
-      <p><div id="drop-zone2" ondrop="dropHandler(event)"   ondragover="dragoverHandler(event)"></div></p>
-
+        <div id="drop-zone1" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)">
+          <img id="img1" src="assets/image1.jpg" draggable="true" ondragstart="dragstartHandler(event)" width="368" height="200">
+        </div>
+        <p><div id="drop-zone2" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div></p>
       </div>
     </section>
     <section>
@@ -46,16 +42,55 @@
     </section>
     <section>
       <h2>🧠 Background Count</h2>
-
-        <p>[    <output id="result"></output>    ]</p>
-        <button onclick="startWorker()">Start Worker</button> 
-        <button onclick="stopWorker()">Stop Worker</button>
-        <button onclick="resetWorker()">Reset</button>
-
+      <p>[ <output id="result"></output> ]</p>
+      <button onclick="startWorker()">Start Worker</button> 
+      <button onclick="stopWorker()">Stop Worker</button>
+      <button onclick="resetWorker()">Reset</button>
     </section>
     <section>
       <h2>📡 Live Updates</h2>
       <div id="sse-output">Waiting for messages...</div>
+    </section>
+    
+    <!-- New Media Center Section -->
+    <section id="media-center">
+      <h2>🎬 Media Center</h2>
+      
+      <div class="media-section">
+        <h3>📺 Watch</h3>
+        <video width="100%" controls autoplay muted poster="assets/poster.jpg">
+          <source src="assets/media/video_1280x720.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <details>
+          <summary>Video Description</summary>
+          <p>This is a demo video showing the features of SmartHTMLApp.</p>
+        </details>
+      </div>
+      
+      <div class="media-section">
+        <h3>🎧 Listen</h3>
+        <audio id="bgMusic" controls loop>
+          <source src="assets/media/audio.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <button onclick="toggleMute()">Toggle Mute</button>
+        <details>
+          <summary>Audio Description</summary>
+          <p>Background music for the SmartHTMLApp experience.</p>
+        </details>
+      </div>
+      
+      <div class="media-section">
+        <h3>🕹️ Try</h3>
+        <p>Modern browsers support various media types natively without plugins. Older plugins like Flash and ActiveX are now deprecated.</p>
+        <iframe src="assets/media/demo.pdf" width="100%" height="400px"></iframe>
+      </div>
+      
+      <div class="media-section">
+        <h3>🎓 Learn</h3>
+        <iframe width="100%" height="400" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
     </section>
   </main>
   <script src="js/script.js"></script>
